@@ -8,6 +8,15 @@ public class Transaction implements Serializable {
     private String from;
     private String to;
 
+    public Transaction() {
+    }
+
+    public Transaction(final double amount, final String from, final String to) {
+        this.amount = amount;
+        this.from = from;
+        this.to = to;
+    }
+
     public double getAmount() {
         return amount;
     }

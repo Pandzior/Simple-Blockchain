@@ -23,7 +23,7 @@ public class Block implements Serializable {
         return hash;
     }
 
-    public void setHash(String hash) {
+    public void setHash(final String hash) {
         this.hash = hash;
     }
 
@@ -31,7 +31,7 @@ public class Block implements Serializable {
         return previousHash;
     }
 
-    public void setPreviousHash(String previousHash) {
+    public void setPreviousHash(final String previousHash) {
         this.previousHash = previousHash;
     }
 
@@ -39,7 +39,7 @@ public class Block implements Serializable {
         return transactions;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(final List<Transaction> transactions) {
         this.transactions = transactions;
     }
 

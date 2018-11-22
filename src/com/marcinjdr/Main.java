@@ -1,15 +1,25 @@
 package com.marcinjdr;
 
-import com.marcinjdr.utils.Helper;
+import com.marcinjdr.blockchain.BlockChain;
+import com.marcinjdr.blockchain.Transaction;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        String[] test1 = {"a", "b", "c"};
-        String[] test2 = {"a", "b", "c", "d"};
+        final BlockChain simpleBlockChain = new BlockChain();
 
-        System.out.println("Hash test1: " + Helper.getSha256Hash(test1));
-        System.out.println("Hash test2: " + Helper.getSha256Hash(test2));
+        final Transaction firstTransaction = new Transaction(123, "Marcin", "Maciej");
+        final Transaction secondTransaction = new Transaction(56, "Maciej", "Piotr");
+        final Transaction thirdTransaction = new Transaction(13, "Piotr", "Marcin");
+
+        simpleBlockChain.addTransaction(firstTransaction);
+        simpleBlockChain.addTransaction(secondTransaction);
+        simpleBlockChain.addTransaction(thirdTransaction);
+
+        simpleBlockChain.saveBlock();
+        System.out.println(simpleBlockChain.getCurrentBlock().getPreviousHash());
+        simpleBlockChain.saveBlock();
+        System.out.println(simpleBlockChain.getCurrentBlock().getPreviousHash());
     }
 }

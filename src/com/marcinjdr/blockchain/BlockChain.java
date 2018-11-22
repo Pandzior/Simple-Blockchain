@@ -15,6 +15,22 @@ public class BlockChain {
         this.blocks = new ArrayList<>();
     }
 
+    public Block getCurrentBlock() {
+        return currentBlock;
+    }
+
+    public void setCurrentBlock(final Block currentBlock) {
+        this.currentBlock = currentBlock;
+    }
+
+    public List<Block> getBlocks() {
+        return blocks;
+    }
+
+    public void setBlocks(final List<Block> blocks) {
+        this.blocks = blocks;
+    }
+
     public void addTransaction(final Transaction transaction) {
         this.currentBlock.addTransaction(transaction);
     }
